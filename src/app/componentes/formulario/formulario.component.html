@@ -1,0 +1,67 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-5 cuadro">
+            <form #projectForm="ngForm" (ngSubmit)="enviar(projectForm)">
+                <div class="alert alert-dismissible alert-success mt-3" *ngIf="estado == 'si'">
+                    <h4 class="alert-heading">Todo en Orden!</h4>
+                    <p class="mb-0">El Proyecto se registro con éxito puedes verlo <a [routerLink]="['/individual',detalles._id]">aquí</a></p>
+                </div>
+                <div class="alert alert-dismissible alert-danger mt-3" *ngIf="estado == 'no'">
+                    <h4 class="alert-heading">Ocurrió un error!</h4>
+                    <p class="mb-0">El Proyecto no se a podido registrar</p>
+                </div>
+                <div class="mt-1">
+                    <h3>{{title}}</h3>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="inputDefault">Nombre</label>
+                    <input type="text" class="form-control" placeholder="Ingresar nombre del proyecto" name="titulo"
+                        #titulo="ngModel" [(ngModel)]="project.titulo" required>
+                    <div *ngIf="titulo.touched && !titulo.valid" class="alert alert-dismissible alert-danger mt-1">
+                        <span>Ingrese el título</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label" for="inputDefault">Descripción</label>
+                    <input type="text" name="descripcion" #descripcion="ngModel" [(ngModel)]="project.descripcion"
+                        class="form-control" placeholder="Ingresar descripcion del proyecto" required="">
+                    <div *ngIf="descripcion.touched && !descripcion.valid"
+                        class="alert alert-dismissible alert-danger mt-1">
+                        <span>Ingrese la descripción</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label" for="inputDefault">Fecha</label>
+                    <input type="date" class="form-control" name="fecha" #fecha="ngModel" [(ngModel)]="project.fecha"
+                        placeholder="Ingresar fecha del proyecto" required="">
+                    <div *ngIf="fecha.touched && !fecha.valid" class="alert alert-dismissible alert-danger mt-1">
+                        <span>Ingrese la fecha</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label" for="inputDefault">Imagen</label>
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" name="image" class="custom-file-input"
+                                (change)="fileChangeEvent($event)" required="">
+                            <label class="custom-file-label" for="inputGroupFile02">Elegir Archivo</label>
+                        </div>
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="">Subir</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="text-center mb-4">
+                    <input class="btn btn-success btn-sx" value="Subir Proyecto" type="submit"
+                        [disabled]="!projectForm.form.valid">
+                </div>
+
+            </form>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>

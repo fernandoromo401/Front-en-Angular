@@ -1,0 +1,11 @@
+.cuadro{
+    border-width: 1px;
+    border-style: solid ;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
+}
+
+.boton{
+    float:none;
+	text-align:center;
+}

@@ -1,0 +1,19 @@
+<div class="jumbotron fondo">
+    <h1 class="display-3 text-center">Práctica Profesional II - MEAN -</h1>
+    <p class="lead text-center">Este es un proyecto donde conectamos un Front-end (Angular) a un Back-end (NodeJS) y este a una Base
+        de Datos NoSQL (MongoDB)</p>
+    <hr class="my-4">
+    <p class="text-center">Para descargar el proyecto en GITHUB ingresar al siguiente boton</p>
+    <p class="lead text-center">
+        <button class="btn btn-primary btn-lg text-center" (click)="partes = !partes" role="button"> ▼ Descargar</button>
+    </p>
+</div>
+<div class="container" *ngIf="partes">
+    <h3 class="">Descargar por partes</h3>
+    <hr class="my-4 mt-4">
+    <div  class="row">
+        <div class="col-sm-4 text-center"><a href=""><img class="animacion" src="../../../assets/img/angular.png" alt="" width="100"></a></div>
+        <div class="col-sm-4 text-center"><a target="_blank" href="https://github.com/fernandoromo401/ApiREST_NodeJS"><img class="animacion" src="../../../assets/img/nodejs.png" alt="" width="110"></a></div>
+        <div class="col-sm-4 text-center"><a target="_blank" href="https://github.com/fernandoromo401/databaseMONGO"><img class="animacion" src="../../../assets/img/mongo.png" alt="" width="120"></a></div>
+    </div>
+</div>

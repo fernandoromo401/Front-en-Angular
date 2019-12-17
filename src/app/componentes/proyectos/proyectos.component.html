@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <div class="row">
+        <div *ngFor="let i of projectsVar"  class="col-sm-4">
+            <div class="card mb-3">
+                <a class="decoracion" [routerLink]="['/individual',i._id]">
+                    <h3 class="card-header bgdegraded text-light">{{i.titulo}}</h3>
+                </a>
+                <img style="height: 200px; width: 100%; display: block;"
+                    src="{{url+'get-image/'+i.imagen}}"
+                    alt="Card image">
+                <div class="card-body">
+                    <p class="card-text">{{i.descripcion}}</p>
+                </div>
+                <div class="card-body">
+                </div>
+                <div class="card-footer text-muted bg-primary height">
+                    <p class="text-light">Fecha: {{i.fecha}}</p> 
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>

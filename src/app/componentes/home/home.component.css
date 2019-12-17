@@ -1,0 +1,10 @@
+.fondo{
+    background-color: rgb(221, 242, 255);
+}
+
+.animacion{
+    transition: transform .2s; 
+}
+.animacion:hover{
+    transform: scale(1.2);
+}
